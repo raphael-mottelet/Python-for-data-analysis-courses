@@ -1,0 +1,21 @@
+----- CORRECTION -----
+
+3 6 Qualité des données 
+
+quel pourcentage de valeur manquantes par colonnes ?
+
+pourcentage_valeurs_manquantes = (df_pres.isnull().mean())
+print(pourcentage_valuers_manquantes)
+
+supprimez les lignes dont le prix est manquant.
+
+[] df_pres = df_pres.dropna(subset=['prix hors honoraires'], how='any')
+df_pres = df_pres.reet_index(drop=True)
+df_pres.head()
+
+
+
+----- NOTES COMPLEMNETAIRES -----
+
+dans l'analyse de donnée la difficulté reside en la qualiter à trouver ce qu'il y a du sens dans l'interprétation.
+Sur python, ce qui est difficile est de matcher et regrouper plusieurs informations en même temps.

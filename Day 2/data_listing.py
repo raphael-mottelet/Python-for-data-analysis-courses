@@ -42,7 +42,7 @@ if active_authorizations.empty:
     
     plt.figure(figsize=(10, 6))
     status_counts.plot(kind='bar', color='salmon')
-    plt.title('Count of Each Status in Statut Administratif')
+    plt.title('Statut Administratif')
     plt.xlabel('Status')
     plt.ylabel('Count')
     plt.xticks(rotation=45, ha='right')
@@ -53,7 +53,7 @@ else:
     titulaires_counts = active_authorizations['Titulaires'].value_counts().head(10)
 
     if titulaires_counts.empty:
-        print("No Titulaires found with active authorizations.")
+        print("No 'Titulaires' found with active authorizations.")
     else:
         plt.figure(figsize=(12, 6))
         titulaires_counts.plot(kind='bar', color='skyblue')
