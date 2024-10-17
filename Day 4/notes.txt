@@ -1,0 +1,6 @@
+si les variables ou la corelation tend vers 1 / -1 forte corelation, si elle tend vers 0 correlation faible
+
+pour certains algo de ML on peut laisser les variables ++ coréllé et ne conduit pas a une destabilité et un modele erroné
+certains algo ML variables ++correlé impacte tres negativement les modele IA correle
+
+pour montrer correlation entre les variables on peut utiliser les tables croisés. et coté graphique on a matrice de corelation qui peut etre utlitsé dans ACP et algo ML non supervisé.
