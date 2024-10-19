@@ -83,18 +83,12 @@ plt.show()
 # Filtrer uniquement les athlètes qui ont gagné des médailles
 df_medalists = df[df['Medal'] != 'None']
 
-# --- Ajout du nuage de points avec corrections ---
-
-# Filtrer les athlètes médaillés et avec un âge plausible
-df_medalists = df[(df['Medal'] != 'None') & (df['Age'] >= 10) & (df['Age'] <= 50)]
-
-# Grouper par athlète et par âge pour avoir une distribution unique
-athlete_age_medals = df_medalists.groupby(['Age'])['Medal'].count().reset_index()
-
 # Créer un nuage de points pour la relation entre l'âge et le nombre de médailles
+athlete_age_medals = df_medalists.groupby(['Name', 'Age'])['Medal'].count().reset_index()
+
 plt.figure(figsize=(10,6))
-sns.scatterplot(x='Age', y='Medal', data=athlete_age_medals, size='Medal', sizes=(20, 200), color="blue", alpha=0.6)
-plt.title('Relation entre l\'âge des athlètes et le nombre de médailles (âges réalistes)')
+sns.scatterplot(x='Age', y='Medal', data=athlete_age_medals, hue='Medal', palette='coolwarm', size='Medal', sizes=(20, 200))
+plt.title('Relation entre l\'âge des athlètes et le nombre de médailles')
 plt.xlabel('Âge de l\'athlète')
 plt.ylabel('Nombre de médailles gagnées')
 plt.show()
